@@ -241,7 +241,7 @@ class JTableContent extends JTable
 		}
 
 		// Check the publish down date is not earlier than publish up.
-		if ($this->publish_down > $this->_db->getNullDate() && $this->publish_down < $this->publish_up)
+		if (strtotime($this->publish_down) > strtotime($this->_db->getNullDate()) && $this->publish_down < $this->publish_up)
 		{
 			// Swap the dates.
 			$temp = $this->publish_up;
